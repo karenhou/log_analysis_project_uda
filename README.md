@@ -1,5 +1,8 @@
-# Logs Analysis Project
-This is the log analysis project for udacity nano full stack web courses
+# News database analysis project
+This is the log analysis project for udacity nano full stack web courses that analysis database news base on following three questions.
+1. What are the most popular three articles of all time?
+2. Who are the most popular article authors of all time?
+3. On which days did more than 1% of requests lead to errors?
 
 ## Install
 In order to run the newsdatadb.py smoothly. You should first create following views:
