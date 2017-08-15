@@ -12,14 +12,14 @@ In order to run the newsdatadb.py smoothly. You should first create following vi
 create view total_views as 
 select path, count(path) as views_num, articles.slug, articles.title, articles.author 
 from log left join articles 
-on path like '%'||slug||'%' 
-where path !='/' 
+on path ='/article/'||slug
+where path !='/'
+and status = '200 OK'
 and path not like '%spam%' 
 and path not like '%20%' 
 and path not like '%ATH%' 
 group by path, slug, title, author 
-order by views_num desc 
-limit 8;
+order by views_num desc;
 ```
 **rank_author**
 ```
@@ -54,7 +54,7 @@ select bad_connection.date, bad_connt_num, total_connt from bad_connection, tota
 **result_table**
 ```
 create view result_table as
-select a.date, round(a.bad_connt_num::NUMERIC/a.total_connt::NUMERIC,3) as result from comparing_table as a inner join comparing_table as b on a.date=b.date;
+select a.date, round(a.bad_connt_num::NUMERIC/a.total_connt::NUMERIC,3) as result from comparing_table as a;
 ```
 
 ## Usage
