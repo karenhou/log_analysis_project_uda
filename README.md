@@ -4,6 +4,15 @@ This is the log analysis project for udacity nano full stack web courses that an
 2. Who are the most popular article authors of all time?
 3. On which days did more than 1% of requests lead to errors?
 
+## Requirement
+Please setup an environment with Python, PostgreSQL and psycopg2 installed
+
+## Download database
+Download the database news [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip) which contain a file `newsdata.sql`
+
+Install database with this command  `psql -d news -f newsdata.sql`
+
+
 ## Install
 In order to run the newsdatadb.py smoothly. You should first create following views:
 
